@@ -1,5 +1,5 @@
 import styles from '../../styles/Home.module.css'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 export default function VideoItem({video}) {
   const item = video.items[0];
@@ -17,8 +17,8 @@ export default function VideoItem({video}) {
   const deleteFromStorage = (id) => {
     setSelected(false);
     if (JSON.parse(localStorage.getItem('Favourites')).includes(id)) {
-      let newarr = JSON.parse(localStorage.getItem('Favourites')).filter((el) => el !== id);
-      localStorage.setItem('Favourites', JSON.stringify(Array.from(newarr)));
+      let newArr = JSON.parse(localStorage.getItem('Favourites')).filter((el) => el !== id);
+      localStorage.setItem('Favourites', JSON.stringify(Array.from(newArr)));
     }
 
   }

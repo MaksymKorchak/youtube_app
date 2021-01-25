@@ -29,7 +29,6 @@ export default function Home() {
     );
     const data = await res.json();
     await setSelectedVideo(data);
-    console.log(data);
   }
 
   useEffect(async () => {
@@ -58,7 +57,6 @@ export default function Home() {
 
       <main className={styles.main_container}>
         {selectedVideo !== null && selectedVideo !== undefined ? <VideoItem video={selectedVideo}/>:<h1>Choose video for watching</h1>}
-        {/*{(selectedVideo === null && videos ) ? <VideoItem video={videos[0]}/> : ''}*/}
 
         <div className={styles.videosContainer}>
           {videos.map((el) => {
